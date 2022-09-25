@@ -16,12 +16,56 @@ export class ToDoComponent implements OnInit {
   inProgress: ITasks[] = [];
   done: ITasks[] = [];
 
+  updateIndex!: any;
+  isEditEnabled: boolean = false;
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.todoForm = this.fb.group({
       item: ['', Validators.required]
     })
+  }
+
+  addTask() {
+    this.tasks.push({
+      description: this.todoForm.value.item,
+      done: false
+    });
+
+    this.todoForm.reset();
+  }
+
+  deleteTask(i: number) {
+    this.tasks.splice(i, 1);
+  }
+
+  deleteInProgress(i: number) {
+    this.inProgress.splice(i, 1);
+  }
+
+  deleteDone(i: number) {
+    this.done.splice(i, 1);
+  }
+
+  editTask(item: ITasks, i: number) {
+    this.todoForm.controls['item'].setValue(item.description);
+
+    this.updateIndex = i;
+
+    this.isEditEnabled = true;
+  }
+
+  updateTask() {
+    this.tasks[this.updateIndex].description = this.todoForm.value.item;
+
+    this.tasks[this.updateIndex].done = false;
+
+    this.todoForm.reset();
+
+    this.updateIndex = undefined;
+
+    this.isEditEnabled = false;
   }
 
   drop(event: CdkDragDrop<ITasks[]>) {
@@ -36,5 +80,7 @@ export class ToDoComponent implements OnInit {
       );
     }
   }
+
+
 
 }

@@ -58,3 +58,66 @@
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 /*  */
+
+.box{
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap:10px ;
+}
+
+.tasks-title{
+  text-align: center;
+  font-family: Broadway;
+  margin: 1px;
+  padding: 1px;
+  /* background: rgb(2,0,36); */
+  background: linear-gradient(270deg, #020024, #090979, #072d90, #0565b5, #0394d4, #00d4ff);
+  background-size: 1200% 1200%;
+  -webkit-animation: AnimationName 14s ease infinite;
+  -moz-animation: AnimationName 14s ease infinite;
+  animation: AnimationName 14s ease infinite;
+  border-radius: 4% 96% 4% 96% / 97% 3% 97% 3% ;
+  color: antiquewhite;
+}
+.inProgress-title{
+  text-align: center;
+  font-family: Broadway;
+  margin: 1px;
+  padding: 1px;
+  background: linear-gradient(120deg, #833ab4, #a3328d, #d42750, #fd1d1d, #fd4f2b, #fcb045);
+  background-size: 1200% 1200%;
+  -webkit-animation: AnimationName 14s ease infinite;
+  -moz-animation: AnimationName 14s ease infinite;
+  animation: AnimationName 14s ease infinite;
+  border-radius: 4% 96% 4% 96% / 97% 3% 97% 3% ;
+  color: antiquewhite;
+}
+.done-title{
+  text-align: center;
+  font-family: Broadway;
+  margin: 1px;
+  padding: 1px;
+  background: linear-gradient(270deg, #eeaeca, #e3b0ce, #d4b2d3, #c7b4d7, #afb7e0, #94bbe9);
+  background-size: 1200% 1200%;
+  -webkit-animation: AnimationName 14s ease infinite;
+  -moz-animation: AnimationName 14s ease infinite;
+  animation: AnimationName 14s ease infinite;
+  border-radius: 4% 96% 4% 96% / 97% 3% 97% 3% ;
+  color: #2A2327;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 82%}
+  50%{background-position:100% 19%}
+  100%{background-position:0% 82%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 82%}
+  50%{background-position:100% 19%}
+  100%{background-position:0% 82%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 82%}
+  50%{background-position:100% 19%}
+  100%{background-position:0% 82%}
+}
