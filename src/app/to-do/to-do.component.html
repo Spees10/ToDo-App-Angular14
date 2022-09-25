@@ -22,19 +22,44 @@
     <div class="col-9">
 
       <div cdkDropListGroup>
-        <div class="example-container">
-          <h2>To do</h2>
+        <div class="row">
+          <!--* To Do part -->
+          <div class="col-4">
 
-          <div cdkDropList [cdkDropListData]="todo" class="example-list" (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+            <div class="example-container">
+              <h2>To Do</h2>
+
+              <div cdkDropList [cdkDropListData]="tasks" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of tasks" cdkDrag>{{item}}</div>
+              </div>
+            </div>
+
           </div>
-        </div>
 
-        <div class="example-container">
-          <h2>Done</h2>
+          <!--* In Progress part -->
+          <div class="col-4">
 
-          <div cdkDropList [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+            <div class="example-container">
+              <h2>In Progress</h2>
+
+              <div cdkDropList [cdkDropListData]="inProgress" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of inProgress" cdkDrag>{{item}}</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!--* Done part -->
+          <div class="col-4">
+
+            <div class="example-container">
+              <h2>Done</h2>
+
+              <div cdkDropList [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
